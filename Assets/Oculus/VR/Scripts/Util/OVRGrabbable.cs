@@ -19,6 +19,8 @@ using UnityEngine;
 public class OVRGrabbable : MonoBehaviour
 {
     [SerializeField]
+    private float endGrabForce = 1;
+    [SerializeField]
     protected bool m_allowOffhandGrab = true;
     [SerializeField]
     protected bool m_snapPosition = false;
@@ -122,7 +124,7 @@ public class OVRGrabbable : MonoBehaviour
     {
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         rb.isKinematic = m_grabbedKinematic;
-        rb.velocity = linearVelocity;
+        rb.velocity = linearVelocity * endGrabForce;
         rb.angularVelocity = angularVelocity;
         m_grabbedBy = null;
         m_grabbedCollider = null;
