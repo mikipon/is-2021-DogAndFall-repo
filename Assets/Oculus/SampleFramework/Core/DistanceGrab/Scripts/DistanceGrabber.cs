@@ -195,7 +195,8 @@ namespace OculusSampleFramework
             }
 
             Rigidbody grabbedRigidbody = m_grabbedObj.grabbedRigidbody;
-            Vector3 grabbablePosition = pos + rot * m_grabbedObjectPosOff;
+            Vector3 grabbablePosition = pos;
+            //grabbablePosition += rot * m_grabbedObjectPosOff;
             Quaternion grabbableRotation = rot * m_grabbedObjectRotOff;
 
             if (m_movingObjectToHand)
@@ -214,9 +215,9 @@ namespace OculusSampleFramework
                     
                 }
             }
-
-            grabbableRotation = m_gripTransform.rotation;//ランダム回転させたくない
-            grabbablePosition = m_grabbedObj.transform.position - transform.position;
+            float alpha = 1;
+            if (m_controller == OVRInput.Controller.LTouch) alpha = -1;
+            grabbableRotation = m_gripTransform.rotation * Quaternion.Euler(0,0,90 * alpha);//ランダム回転させたくない
 
             grabbedRigidbody.MovePosition(grabbablePosition);
             grabbedRigidbody.MoveRotation(grabbableRotation);
