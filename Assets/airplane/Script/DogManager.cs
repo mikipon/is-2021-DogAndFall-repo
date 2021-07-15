@@ -4,10 +4,7 @@
     これはoffsetでもpaddingでもmarginでもどんな変数でもよくて、とりあえず、敵の攻撃範囲としている。
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class DogManager : MonoBehaviour
 {
@@ -43,6 +40,15 @@ public class DogManager : MonoBehaviour
         {
             Chase(Collided); // 動く
             isWalking = false;
+
+            //if () // ボールを拾ったら
+            //{
+                // カメラの場所に返ってくる targetをCameraにすればいい
+                // isWalkingをtrueにする
+                // Chase(Collided)のColliderをfalseにする
+                // カメラの位置に来たらColliderをfalse、isWalkingをfalse、isSittingをTrue
+            //}
+
         }
     }
 
