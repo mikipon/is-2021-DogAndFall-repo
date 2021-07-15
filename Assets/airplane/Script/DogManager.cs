@@ -33,8 +33,16 @@ public class DogManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Collided) {
-            Chase();
+        if (!Collided) { // target‚ÉG‚ê‚Ä‚¢‚È‚¢
+
+            isWalking = true; // •à‚­
+            Chase(Collided); // “®‚­
+
+        }
+        else
+        {
+            Chase(Collided); // “®‚­
+            isWalking = false;
         }
     }
 
@@ -56,36 +64,38 @@ public class DogManager : MonoBehaviour
     /// G‚ê‚é‚Ì‚ğ‚â‚ß‚½
     /// </summary>
     /// <param name="col"></param>
-    private void OnCollisionExit(Collision col)
+    void OnTriggerExit(Collider col)
     {
-        Collided = false;
+        //Collided = false;
+        Debug.Log("”²‚¯‚¿‚á‚Á‚½");
     }
 
     /// <summary>
     /// ’ÇÕ
     /// </summary>
-    private void Chase()
+    private void Chase(bool move)
     {
         //ƒAƒjƒ[ƒVƒ‡ƒ“‚ğƒZƒbƒg
         m_Animator.SetBool("isWalking", isWalking);
         m_Animator.SetBool("isSitting", isSitting);
 
-        if (!Collided) // G‚ê‚Ä‚È‚¢
+        if (!move)
         {
-            Debug.Log("G‚ê‚Ä‚È‚¢");
-            isWalking = true;
             myTr.LookAt(target.transform);
             Vector3 relativePos = targetTr.position - myTr.position; // Target‚ÌêŠ‚ğ”cˆ¬
-            myTr.position += relativePos.normalized * speed;
-
-
+            myTr.position += relativePos.normalized * speed; // ˆÚ“®
         }
-        else // G‚ê‚Ä‚¢‚é
+        else
         {
-            Debug.Log("G‚ê‚½");
-            isWalking = false;
             isSitting = true;
         }
+
+        //if(Collided) // G‚ê‚Ä‚¢‚é
+        //{
+        //    Debug.Log("G‚ê‚½");
+        //    isSitting = true;
+            
+        //}
 
     }
     /*
