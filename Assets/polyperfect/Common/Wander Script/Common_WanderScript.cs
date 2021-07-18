@@ -553,13 +553,20 @@ namespace PolyPerfect
 
             navMeshAgent.speed = movementStates[currentState].moveSpeed;
             navMeshAgent.angularSpeed = movementStates[currentState].turnSpeed;
-            navMeshAgent.SetDestination(target);
+            if (navMeshAgent.pathStatus != NavMeshPathStatus.PathInvalid)
+            {
+                //navMeshAgentの操作
+                navMeshAgent.SetDestination(target);
+            }
 
             float timeMoving = 0f;
-            while ((navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance || timeMoving < 0.1f) && timeMoving < movementStates[currentState].maxStateTime)
+            float navTest = navMeshAgent.remainingDistance;
+            var test = navMeshAgent.stoppingDistance;
+            while (((navTest < test) || timeMoving < 0.1f) && timeMoving < movementStates[currentState].maxStateTime)
             {
                 timeMoving += Time.deltaTime;
                 yield return null;
+                if (navTest < test) yield return navTest;
             }
 
             navMeshAgent.SetDestination(transform.position);
