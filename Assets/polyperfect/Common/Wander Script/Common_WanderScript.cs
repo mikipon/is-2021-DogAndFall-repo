@@ -487,7 +487,7 @@ namespace PolyPerfect
 
             if (!string.IsNullOrEmpty(idleStates[currentState].animationBool))
             {
-                animator.SetBool(idleStates[currentState].animationBool, true);
+                //animator.SetBool(idleStates[currentState].animationBool, true);
             }
 
             float stateTime = firstState ?
@@ -507,7 +507,7 @@ namespace PolyPerfect
             {
                 if (!string.IsNullOrEmpty(idleStates[currentState].animationBool))
                 {
-                    animator.SetBool(idleStates[currentState].animationBool, false);
+                    //animator.SetBool(idleStates[currentState].animationBool, false);
                 }
             }
 
