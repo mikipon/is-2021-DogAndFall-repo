@@ -83,7 +83,7 @@ namespace OculusSampleFramework
             Collider sc = m_player.GetComponentInChildren<Collider>();
             if(sc != null)
             {
-                m_maxGrabDistance = sc.bounds.size.z * 0.5f + 3.0f;
+                m_maxGrabDistance = sc.bounds.size.z * 1.0f + 3.0f;
             }
             else
             {
@@ -267,7 +267,7 @@ namespace OculusSampleFramework
                             // NOTE: if this raycast fails, ideally we'd try other rays near the edges of the object, especially for large objects.
                             // NOTE 2: todo optimization: sort the objects before performing any raycasts.
                             Ray ray = new Ray();
-                            ray.direction = grabbable.transform.position - m_gripTransform.position;
+                            ray.direction = (grabbable.transform.position - m_gripTransform.position) * 5;
                             ray.origin = m_gripTransform.position;
                             RaycastHit obstructionHitInfo;
                             Debug.DrawRay(ray.origin, ray.direction, Color.red, 0.1f);
