@@ -53,8 +53,7 @@ public class DogDirecter : MonoBehaviour
         }
 
     }
-
-    public void 
+    
 
     void StartChase()
     {

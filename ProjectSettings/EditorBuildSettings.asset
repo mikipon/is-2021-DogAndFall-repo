@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/crayfish/otameScene.unity
+    path: Assets/crayfish/DogScene.unity
     guid: 337987e56e5bbc94dbbc5dc7e617db4f
   - enabled: 1
     path: Assets/nekocan/otameScene.unity
