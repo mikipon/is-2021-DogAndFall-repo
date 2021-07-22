@@ -14,25 +14,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: isRunning
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: isBarking
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: isSitting
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -282,9 +270,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 1.1537211
+  m_TransitionDuration: 0.000000021583379
   m_TransitionOffset: 0
-  m_ExitTime: 0.0000000063802625
+  m_ExitTime: 0.000000010862865
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -329,9 +317,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.467503
-  m_TransitionOffset: 0.1746279
-  m_ExitTime: 9.850956e-10
+  m_TransitionDuration: 1.0172731
+  m_TransitionOffset: 0
+  m_ExitTime: 0.3582379
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 2
@@ -376,7 +364,6 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101579073143604580}
-  - {fileID: 1101126444126296904}
   - {fileID: 1101024827053471860}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
@@ -482,12 +469,10 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Idle
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 1101141968407227250}
   - {fileID: 1101953706593669824}
-  - {fileID: 1101519467190873618}
   - {fileID: 1101500912754805954}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
@@ -517,17 +502,11 @@ AnimatorStateMachine:
     m_State: {fileID: 1102857988256875500}
     m_Position: {x: 360, y: 60, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102459688754254122}
-    m_Position: {x: 460, y: -150, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 1102027180424272928}
-    m_Position: {x: 240, y: -156, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102524659100908750}
-    m_Position: {x: 672, y: 60, z: 0}
+    m_Position: {x: 240, y: -150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102424175218445142}
-    m_Position: {x: 768, y: -60, z: 0}
+    m_Position: {x: 850, y: -70, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102243329176540724}
     m_Position: {x: 540, y: -36, z: 0}
