@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LoadScener : MonoBehaviour
 {
-    string dogScene = "otameScene";
-    string darumaScene = "otameScene";
+    public string dogScene = "otameScene";
+    public string darumaScene = "otameScene";
     void Start()
     {
         DebugUIBuilder.instance.AddLabel("Load Scene");
